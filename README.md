@@ -1,5 +1,5 @@
 
-# Ex.No:1 To develop a simple application to play and control the audio file in android studio.
+# Ex.No:3 To develop a simple application to play and control the audio file in android studio.
 
 
 
@@ -30,8 +30,6 @@ Step 7: Save and run the application.
 
 ## PROGRAM:
 ```
-/*
-
 Developed by: Loghul M
 Registeration Number : 212220230029
 
@@ -90,9 +88,7 @@ activityMain.xml:
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 ```
-
-MainActivity.java
-
+## MainActivity.java
 ```java
 package com.example.mediaplayer;
 
@@ -150,19 +146,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 ```
-
-
-
-
-
-
-## <br/>OUTPUT
-
+## OUTPUT
 ![Screenshot (8)](https://user-images.githubusercontent.com/78194419/195649246-a3c6624e-e43f-4bea-9625-4c98e04ddc16.png)
 ![Screenshot (7)](https://user-images.githubusercontent.com/78194419/195649279-4e3e28a0-263f-45ca-b0f5-91827deefaa8.png)
 
 
 
-## <br/><br/>RESULT
+## RESULT
 Thus a Simple Android Application create a dtatabase table and to display the database table  using SQLite Database in Android Studio is developed and executed successfully.
 
