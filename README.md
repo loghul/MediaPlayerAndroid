@@ -1,12 +1,11 @@
 ### EX NO : 03
-### DATE  : 11/10/22
-# <p align="center">  To develop a simple application to play and control the audio file in android studio.
- </p>
+### DATE  : 11/10//22
+# <p align="center"> Develop a simple application to play and control the audio file in android studio </p>
+
 
 ## AIM:
 
 To Develop a simple application to play and control the audio file in android studio.
-
 
 ## EQUIPMENTS REQUIRED:
 
@@ -28,10 +27,12 @@ Step 6: Display message give in MainActivity file.
 
 Step 7: Save and run the application.
 
-## PROGRAM:
+## </br></br></br></br></br></br></br>PROGRAM:
 ```
-Developed by: Loghul M
-Registeration Number : 212220230029
+/*
+
+Developed by: Dineshkumar V
+Registeration Number : 212220230013
 
 ```
 
@@ -48,109 +49,136 @@ activityMain.xml:
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="play"
-        android:text="Play"
+        android:text="Audio Controller"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281" />
+        app:layout_constraintVertical_bias="0.216" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.429"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.329" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
-        android:layout_marginEnd="180dp"
-        android:onClick="pause"
         android:text="Pause"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.455" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="stop"
         android:text="Stop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintVertical_bias="0.568" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 ```
-## MainActivity.java
+
+MainActivity.java
+
 ```java
-package com.example.mediaplayer;
 
-import android.content.Context;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
+package com.example.audio3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
-    MediaPlayer player;
-    private Context context;
-    private Object text;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.widget.Button;
 
+
+public class MainActivity extends AppCompatActivity {
+    Button start,pause,stop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-    public void play(View v){
-        if(player==null){
-            player= MediaPlayer.create(this,R.raw.song);
-            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
-                public void onCompletion(MediaPlayer mp){
-                    stopPlayer();
+        start=(Button)findViewById(R.id.button1);
+        pause=(Button)findViewById(R.id.button2);
+        stop=(Button)findViewById(R.id.button3);
+        //creating media player
+
+        try{
+            //you can change the path, here path is external directory(e.g. sdcard) /Music/maine.mp3
+
+
+            MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.audio);
+
+            start.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mp.start();
+
                 }
             });
-        }
-        player.start();
+            pause.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mp.pause();
 
-    }
-    public void pause(View v){
-        if(player!=null){
-            player.pause();
-        }
+                }
+            });
+            pause.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mp.stop();
 
-    }
-    public void stop(View v){
-        stopPlayer();
+                }
+            });
+
+        }catch(Exception e){e.printStackTrace();}
 
 
-    }
-    private void stopPlayer(){
-        if(player!=null){
-            player.release();
-            player=null;
-            Toast.makeText(this,"MediaPlayer released",Toast.LENGTH_SHORT).show();
 
-        }
     }
 }
 
-
 ```
-## OUTPUT
-![Screenshot (8)](https://user-images.githubusercontent.com/78194419/195649246-a3c6624e-e43f-4bea-9625-4c98e04ddc16.png)
-![Screenshot (7)](https://user-images.githubusercontent.com/78194419/195649279-4e3e28a0-263f-45ca-b0f5-91827deefaa8.png)
 
 
-## RESULT
-Thus a Simple Android Application create a dtatabase table and to display the database table  using SQLite Database in Android Studio is developed and executed..
+
+
+
+
+
+
+## </br></br></br></br></br></br></br></br></br></br></br></br></br>OUTPUT
+
+</br></br>
+![Screenshot 2022-11-05 192134](https://user-images.githubusercontent.com/75235789/200123351-bdbff7bb-9fdb-4665-be22-3b0f3d4f60ef.jpg)
+
+
+## </br></br></br>RESULT
+Thus a Simple Android Application To Develop a simple application to play and control the audio file in android studio is developed and executed successfully.
+
 
