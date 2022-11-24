@@ -1,7 +1,7 @@
-
-# Ex.No:3 To develop a simple application to play and control the audio file in android studio.
-
-
+### EX NO : 03
+### DATE  : 11/10/22
+# <p align="center">  To develop a simple application to play and control the audio file in android studio.
+ </p>
 
 ## AIM:
 
@@ -151,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
 ![Screenshot (7)](https://user-images.githubusercontent.com/78194419/195649279-4e3e28a0-263f-45ca-b0f5-91827deefaa8.png)
 
 
-
 ## RESULT
-Thus a Simple Android Application create a dtatabase table and to display the database table  using SQLite Database in Android Studio is developed and executed successfully.
+Thus a Simple Android Application create a dtatabase table and to display the database table  using SQLite Database in Android Studio is developed and executed..
 
