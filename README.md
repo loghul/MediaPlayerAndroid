@@ -31,8 +31,8 @@ Step 7: Save and run the application.
 ```
 /*
 
-Developed by: Dineshkumar V
-Registeration Number : 212220230013
+Developed by: Loghul M
+Registeration Number : 212220230029
 
 ```
 
